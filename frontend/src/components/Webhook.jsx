@@ -22,6 +22,7 @@ export default function Webhook() {
             const text = await res.text();
             try{
                 const json = JSON.parse(text);
+                setResponse(json);
             } catch {
                 setResponse(text);
             }
