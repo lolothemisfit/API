@@ -22,6 +22,7 @@ export default function Webhook() {
             const text = await res.text();
             try{
                 const json = JSON.parse(text);
+                setResponse(json);
             } catch {
                 setResponse(text);
             }
@@ -33,7 +34,7 @@ export default function Webhook() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-blue-600 text-slate-100 p-6">
+        <div className="min-h-screen flex items-center justify-center bg-blue text-slate-100 p-6">
             <div className="w-full max-w-2xl rounded-2xl bg-slate-900/60 border border-slate-800 p-6 shadow">
                 <h1 className="text-2xl font-semibold">Webhook Validator</h1>
                 <p className="text-slate-300 mt-2">
